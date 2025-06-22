@@ -39,9 +39,9 @@ export default function AutomaticSystemDesign() {
 
     //? Generate random positions
     const anchor_position: number[] = [
-      [30, 40],
-      [40, 50],
-      [50, 60],
+      [40, 40],
+      [50, 50],
+      [55, 65],
     ][Math.floor(Math.random() * 3)];
     const available_positions_x: number[] = [-30, -20, -10, 0, 10, 20, 30, 40];
     const available_positions_y: number[] = [-30, -20, -10, 0, 10, 20, 30, 40];
@@ -122,7 +122,7 @@ export default function AutomaticSystemDesign() {
 
   return (
     <>
-      <div ref={canvas} id="system-design-canvas" className="w-[95vw] h-[95vh] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 overflow-hidden -z-100">
+      <div ref={canvas} id="system-design-canvas" className="w-[100vw] h-[100vh] absolute top-0 left-0 overflow-hidden -z-100">
         {(() => {
           if (!workflowData) return <></>;
 
@@ -188,7 +188,6 @@ export default function AutomaticSystemDesign() {
             .map(([key, [x_pos, y_pos]], index) => {
               const workflowBlockName = key as WorkflowBlocks;
               if(!workflowData.workflow_choosen_blocks[workflowBlockName]) return <></>;
-              console.log(workflowData.workflow_choosen_blocks[workflowBlockName]);
 
               return (
                 <div
@@ -241,7 +240,7 @@ export default function AutomaticSystemDesign() {
               })
             );
         })()}
-        <div className="bg-black/75 w-full h-full absolute top-0 left-0"></div>
+        <div className="bg-black/90 w-[100vw] h-[100vh] absolute top-0 left-0"></div>
       </div>
     </>
   );
