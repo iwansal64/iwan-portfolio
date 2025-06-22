@@ -29,7 +29,7 @@ export default function HoverCounter() {
       console.log("RESET");
       resetCounter();
       hover_counter_elements.forEach(element => element.classList.remove("over-10"));
-    }, 5000);
+    }, 1000);
     
     
     //? Add over-10 class after hoverring more than 10 times

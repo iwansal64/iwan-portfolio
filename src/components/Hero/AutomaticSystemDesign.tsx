@@ -123,7 +123,7 @@ export default function AutomaticSystemDesign() {
 
   return (
     <>
-      <div ref={canvas} id="system-design-canvas" className="w-[100vw] h-[100vh] absolute top-0 left-0 overflow-hidden -z-100">
+      <div ref={canvas} id="system-design-canvas" className="w-[100vw] h-[100vh] absolute top-0 left-0 -z-100">
         {(() => {
           if (!workflowData) return <></>;
 
@@ -236,7 +236,8 @@ export default function AutomaticSystemDesign() {
               })
             );
         })()}
-        <div className="bg-black/90 w-[100vw] h-[100vh] absolute top-0 left-0"></div>
+        <div className="bg-radial-[at_50%_-150%] from-black/90 from-65% to-black/0 to-70% w-[300vw] h-[150vh] absolute top-0 left-1/2 -translate-x-1/2"></div>
+        <div className="bg-radial-[at_50%_0%] from-white/10 from-25% to-white/0 to-70% w-[150vw] h-[100vh] absolute top-0 left-1/2 -translate-x-1/2"></div>
       </div>
     </>
   );

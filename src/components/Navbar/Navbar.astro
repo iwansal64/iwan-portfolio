@@ -5,8 +5,8 @@ import Sidebar from "./Sidebar";
 ---
 
 
-<nav class="hidden w-[90vw] p-4 lg:flex flex-row justify-around fixed left-1/2 -translate-x-1/2">
-  <a class="hover-counter" href="#">INTRO</a>
+<nav class="hidden w-[90vw] p-4 lg:flex flex-row justify-around fixed left-1/2 -translate-x-1/2 z-100">
+  <a class="hover-counter" href="#hero">INTRO</a>
   <a class="hover-counter" href="#about">ABOUT</a>
   <div class="select-none flex justify-center items-center text-[#6b2e94]">I W A N</div>
   <a class="hover-counter" href="#project">PROJECTS</a>
@@ -40,20 +40,35 @@ import Sidebar from "./Sidebar";
   a:hover ~ span {
     width: 100%;
     left: 0;
-    transition-duration: 1000ms;
+    transition-duration: 200ms;
+  }
+  
+  a:active {
+    border-color: #6b2e94;
+    transition-duration: 50ms;
+  }
+  
+  a:active ~ span {
+    background: #6b2e94;
+    transition-duration: 50ms;
   }
 
   div {
     padding: 10px;
-    transition-delay: 230ms;
+    transition-delay: 150ms;
     transition-duration: 200ms;
     transform: skew(-15deg);
     border: 2px solid transparent;
   }
 
   a:hover ~ div, div:has(~ a:hover) {
+    transition-delay: 0s;
     border-color: white;
     background-color: #000;
+  }
+
+  a:active ~ div, div:has(~ a:active) {
+    border-color: #6b2e94;
   }
 
   a.over-10 {
