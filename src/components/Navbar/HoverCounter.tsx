@@ -8,8 +8,6 @@ export default function HoverCounter() {
   useEffect(() => {
     const hover_counter_elements = Array.from(document.getElementsByClassName("hover-counter"));
     
-    console.log(hover_counter_elements);
-    
     hover_counter_elements.forEach(element => {
       (element as HTMLLinkElement).addEventListener("mouseenter", addCounter);
     })

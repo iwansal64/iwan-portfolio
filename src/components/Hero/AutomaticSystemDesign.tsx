@@ -4,6 +4,7 @@ import ConnectionLine from "./ConnectionLine";
 import { useAnimeHook } from "../../hooks/useAnime";
 import { get_random_from_array } from "../../others/util";
 import { interval_between_workflows, Workflow, workflow_creation_time, workflow_data, workflow_options, WorkflowBlocks } from '../../others/autoSystemDesignConf';
+import WorkflowBlock from "./WorkflowBlock";
 
 
 type WorkflowChoosenBlocksType = {
@@ -39,9 +40,9 @@ export default function AutomaticSystemDesign() {
 
     //? Generate random positions
     const anchor_position: number[] = [
-      [40, 40],
+      [50, 40],
       [50, 50],
-      [55, 65],
+      [50, 60],
     ][Math.floor(Math.random() * 3)];
     const available_positions_x: number[] = [-30, -20, -10, 0, 10, 20, 30, 40];
     const available_positions_y: number[] = [-30, -20, -10, 0, 10, 20, 30, 40];
@@ -134,9 +135,9 @@ export default function AutomaticSystemDesign() {
               start_pos: [number, number, number, number]
             };
           } = {};
-          const spread_value = 2;
+          const spread_value = 3;
 
-          workflowData.workflow_connections.map((currConnection, index) => {
+          workflowData.workflow_connections.forEach((currConnection, index) => {
             if (index === 0) return;
 
             const prevConnection: WorkflowBlocks = workflowData.workflow_connections[index - 1];
@@ -187,21 +188,16 @@ export default function AutomaticSystemDesign() {
           return Object.entries(workflowData.workflow_block_positions)
             .map(([key, [x_pos, y_pos]], index) => {
               const workflowBlockName = key as WorkflowBlocks;
-              if(!workflowData.workflow_choosen_blocks[workflowBlockName]) return <></>;
+              if(!workflowData.workflow_choosen_blocks[workflowBlockName]) return "";
 
+              //? Workflow Block Component
               return (
-                <div
-                  key={index}
-                  className={`${workflowBlockName} block-${key} absolute opacity-0 -translate-x-1/2 -translate-y-1/2 bg-black w-40 text-center flex justify-center items-center h-20`}
-                  style={{ top: y_pos + "%", left: x_pos + "%" }}
-                >
-                  {workflowData.workflow_choosen_blocks[workflowBlockName]}
-                </div>
+                <WorkflowBlock key={index} blockName={workflowBlockName} blockValue={workflowData.workflow_choosen_blocks[workflowBlockName]} x_pos={x_pos} y_pos={y_pos} />
               );
             })
             .concat(
               workflowData.workflow_connections.map((currConnection, index) => {
-                if (index == 0) return <></>;
+                if (index == 0) return "";
 
                 const prevConnection: WorkflowBlocks = workflowData.workflow_connections[index - 1];
                 let prevPos: [number, number] = workflowData.workflow_block_positions[prevConnection];
