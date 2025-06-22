@@ -18,8 +18,6 @@ export default function HoverCounter() {
   }, []);
 
   useEffect(() => {
-    console.log(counter);
-    
     //? Hover counter timeout
     if(counter == 0) {
       return;

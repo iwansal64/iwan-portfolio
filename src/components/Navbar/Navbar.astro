@@ -25,7 +25,7 @@ import HoverCounter from "./HoverCounter";
   
   a:hover {
     border-color: white;
-    background-color: #999;
+    background-color: black;
     transition-delay: 0s;
   }
   
@@ -56,6 +56,13 @@ import HoverCounter from "./HoverCounter";
 
   a.over-10 {
     color: #6b2e94;
-    font-weight: bold;
+  }
+  
+  a.over-10:hover {
+    border-color: #6b2e94;
+  }
+
+  a.over-10 ~ span {
+    background-color: #6b2e94;
   }
 </style>
