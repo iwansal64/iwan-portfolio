@@ -3,7 +3,7 @@ import { animate, createScope, Scope } from "animejs";
 import ConnectionLine from "./ConnectionLine";
 import { useAnimeHook } from "../../hooks/useAnime";
 import { get_random_from_array } from "../../others/util";
-import { interval_between_workflows, Workflow, workflow_data, workflow_options, WorkflowBlocks } from '../../others/autoSystemDesignConf';
+import { interval_between_workflows, Workflow, workflow_creation_time, workflow_data, workflow_options, WorkflowBlocks } from '../../others/autoSystemDesignConf';
 
 
 type WorkflowChoosenBlocksType = {
@@ -35,8 +35,7 @@ export default function AutomaticSystemDesign() {
 
     //? Choose Workflow to Show
     const choosen_workflow = Object.values(Workflow)[Math.floor(Math.random() * Object.keys(Workflow).length)];
-    const choosen_workflow_data = workflow_data["ImageUpload"];
-    console.log(choosen_workflow)
+    const choosen_workflow_data = workflow_data[choosen_workflow];
 
     //? Generate random positions
     const anchor_position: number[] = [
@@ -109,7 +108,7 @@ export default function AutomaticSystemDesign() {
             {
               to: 0,
               duration: 2000,
-              delay: (interval_between_workflows+(index*100))
+              delay: ((interval_between_workflows - (Object.entries(workflowData.workflow_block_positions).length * 100)) + (index*100))
             }
           ],
         });
@@ -237,7 +236,7 @@ export default function AutomaticSystemDesign() {
                 
                 
                 return (
-                  <ConnectionLine className={add} key={index + 100} delay={index * 1000} fromPos={[prevPos[0], prevPos[1]]} toPos={[currPos[0], currPos[1]]} />
+                  <ConnectionLine className={add} key={index + 100} delay={index * (workflow_creation_time / (Object.keys(workflowData.workflow_connections).length - 1))} fromPos={[prevPos[0], prevPos[1]]} toPos={[currPos[0], currPos[1]]} />
                 );
               })
             );

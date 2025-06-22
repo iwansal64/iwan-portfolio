@@ -1,5 +1,5 @@
-export const interval_between_workflows: number = 20000;
-
+export const interval_between_workflows: number = 10000;
+export const workflow_creation_time: number = 5000;
 
 type WorkflowDataType = {
   [key in Workflow]: WorkflowBlocks[];
