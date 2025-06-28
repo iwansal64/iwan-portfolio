@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { animate, createScope, Scope } from "animejs";
 import ConnectionLine from "./ConnectionLine";
 import { useAnimeHook } from "../../hooks/useAnime";
-import { get_random_from_array } from "../../others/util";
-import { interval_between_workflows, Workflow, workflow_creation_time, workflow_data, workflow_options, WorkflowBlocks } from '../../others/autoSystemDesignConf';
+import { get_random_from_array } from "../../functions/util";
+import { interval_between_workflows, Workflow, workflow_creation_time, workflow_data, workflow_options, WorkflowBlocks } from '../../configurations/autoSystemDesignConf';
 import WorkflowBlock from "./WorkflowBlock";
 
 

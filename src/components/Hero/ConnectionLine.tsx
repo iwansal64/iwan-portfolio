@@ -2,7 +2,7 @@ import { animate, createScope, type Scope } from "animejs";
 import { useEffect, useRef, useState } from "react";
 import { useAnimeHook } from "../../hooks/useAnime";
 import { useUniqueIDHook } from "../../hooks/useUniqueID";
-import { interval_between_workflows } from "../../others/autoSystemDesignConf";
+import { interval_between_workflows } from "../../configurations/autoSystemDesignConf";
 
 interface Props {
   fromPos: [number, number],

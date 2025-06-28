@@ -1,0 +1,25 @@
+---
+import Observer from "../../functions/observer"
+---
+
+<Observer client:load />
+<section id="about" class="w-dvw h-dvh mt-[50vh] p-10 flex flex-col items-center">
+  <h1 class="observed text-center w-fit h-fit p-4 duration-1200 text-xl relative [&.observed-intersected]:text-3xl md:[&.observed-intersected]:text-5xl [&.observed-intersected_>_div]:scale-120 [&.observed-intersected_.strecth-height]:h-full [&.observed-intersected_.strecth-width]:w-full">
+    Know Me Better
+
+    <div class="absolute w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-100 delay-100 duration-1000">
+      <span class="strecth-height strecth-1 delay-200 duration-1500 w-[1px] h-0 top-0 left-0"></span>
+      <span class="strecth-width strecth-1 delay-200 duration-1500 w-0 h-[1px] top-0 right-0"></span>
+      <span class="strecth-height strecth-2 delay-200 duration-1500 w-[1px] h-0 bottom-0 right-0"></span>
+      <span class="strecth-width strecth-2 delay-200 duration-1500 w-0 h-[1px] bottom-0 left-0"></span>
+    </div>
+  </h1>
+</section>
+
+<style>
+  span {
+    background-color: #fff;
+    position: absolute;
+  }
+</style>
+

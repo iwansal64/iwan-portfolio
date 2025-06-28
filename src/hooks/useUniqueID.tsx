@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { get_random_from_array } from "../others/util";
+import { get_random_from_array } from "../functions/util";
 
 export const alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
