@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -11,8 +13,12 @@ import "../styles/global.css";
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" href="/icon.png" type="image/x-icon">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content="Programmer | Software Developer | System Architect">
+		<title>Ridwan Bagoes Setiawan</title>
+		<SpeedInsights />
+		<Analytics />
 	</head>
 	<body>
 		<slot />

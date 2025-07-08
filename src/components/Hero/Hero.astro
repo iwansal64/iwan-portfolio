@@ -4,13 +4,41 @@ import AutomaticSystemDesign from "./AutomaticSystemDesign";
 
 ---
 
-<section id="hero" class="w-dvw h-dvh">
-  <!-- My Name -->
-   <h1 class="font-thin italic text-6xl lg:text-8xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col -space-y-2 text-center">
-      <span class="opacity-100">Ridwan</span>
-      <span class="opacity-80 -mt-2">Bagoes</span>
-      <span class="opacity-50">Setiawan</span>
-   </h1>
+<section id="hero" class="w-dvw min-h-dvh h-max relative">
+   <div class="absolute top-68 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-40 flex flex-col gap-2 overflow-hidden">
+      <!-- My Name -->
+      <h1 class="font-thin italic text-6xl lg:text-8xl flex flex-col -space-y-2 w-fit">
+         <span class="opacity-100">Ridwan</span>
+         <span class="opacity-80 -mt-2">Bagoes</span>
+         <span class="opacity-50">Setiawan</span>
+      </h1>
+   
+      <!-- What I'm Doing -->
+      <p class="mt-6 tracking-wider text-xs lg:text-lg w-fit text-center font-medium">
+         <span>System Architect</span>
+         <span>-</span>
+         <span>Data Analyzer</span>
+         <span>-</span>
+         <span>Fullstack Developer</span>
+      </p>
+
+      <!-- A quick glance of what I am about -->
+      <div class="">
+         <p>
+            I have been learning about this sophisticated field for more than 5 years.
+         </p>
+         <p>
+            I have used those skills in some projects. It helps me solve many problems that I had before and the other that I will face in the future.
+         </p>
+         <br>
+         <p>
+            I put a lot of value in <b>Clarity</b>, <b>Discipline</b>, and <b>Curiousity</b>.
+         </p>
+         <p>
+            I want to contribute more to a team so that we can achieve our shared goals together!
+         </p>
+      </div>
+   </div>
 
    <AutomaticSystemDesign client:load />
 </section>

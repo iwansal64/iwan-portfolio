@@ -8,8 +8,6 @@ export default function HoverCounter() {
   useEffect(() => {
     const hover_counter_elements = Array.from(document.getElementsByClassName("hover-counter"));
     
-    console.log(hover_counter_elements);
-    
     hover_counter_elements.forEach(element => {
       (element as HTMLLinkElement).addEventListener("mouseenter", addCounter);
     })
@@ -31,7 +29,7 @@ export default function HoverCounter() {
       console.log("RESET");
       resetCounter();
       hover_counter_elements.forEach(element => element.classList.remove("over-10"));
-    }, 5000);
+    }, 1000);
     
     
     //? Add over-10 class after hoverring more than 10 times

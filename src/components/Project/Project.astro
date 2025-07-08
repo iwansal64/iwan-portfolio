@@ -1,0 +1,18 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { project_informations } from "./projects_informations";
+
+
+---
+
+<section id="project" class="w-dvw min-h-dvh h-max relative md:px-48 px-10 pt-28">
+  <div class="h-fit relative left-1/2 -translate-x-1/2 flex flex-col md:left-0 md:translate-x-0 text-left">
+    <h1 class="text-5xl md:text-7xl relative w-fit">Project</h1>
+    <p class="mt-4 relative w-fit">Here are some of my projects that I've been working on recently</p>
+  </div>
+  <div class="mt-8 flex flex-col gap-6">
+    {project_informations.map((data, index) => {
+      return <ProjectCard project_data={data} project_number={index+1} />
+    })}
+  </div>
+</section>
