@@ -1,0 +1,20 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { project_informations } from "./projects_informations";
+
+import Observer from "../../others/observer";
+
+---
+
+<Observer client:load />
+<section id="project" class="w-dvw h-dvh relative md:px-48 px-10 pt-28">
+  <div class="h-fit relative left-1/2 -translate-x-1/2 flex flex-col md:left-0 md:translate-x-0 text-center md:text-left">
+    <h1 class="text-7xl observed relative opacity-0 w-fit -left-5 duration-1000 [&.observed-intersected]:opacity-100 [&.observed-intersected]:left-0">Project</h1>
+    <p class="mt-4 observed relative opacity-0  w-fit -left-5 duration-1000 delay-0 [&.observed-intersected]:delay-250 [&.observed-intersected]:opacity-100 [&.observed-intersected]:left-0">Below are some of my projects that I've created recently</p>
+  </div>
+  <div class="mt-20 md:mt-36 flex flex-col gap-4">
+    {project_informations.map((data, index) => {
+      return <ProjectCard project_data={data} project_number={index+1} />
+    })}
+  </div>
+</section>

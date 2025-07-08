@@ -10,10 +10,8 @@ export default function Sidebar() {
   </button>
   <div className={`lg:hidden w-full h-full flex flex-col justify-between fixed z-100 px-4 pb-8 pt-24 duration-1000 ${isOpen ? "bg-black" : "bg-transparent pointer-events-none"}`}>
     <div className={`flex flex-col text-4xl delay-500 duration-500 ${isOpen ? "" : "delay-0! -translate-x-[200%]"}`}>
-      <a className="p-4 border-b-1 border-white" onClick={() => setIsOpen(false)} href="#">1. INTRO</a>
-      <a className={`p-4 border-b-1 border-white -translate-x-48 duration-1000 ${isOpen ? "delay-400 translate-x-0!" : "delay-0"}`} onClick={() => setIsOpen(false)} href="#about">2. ABOUT</a>
-      <a className={`p-4 border-b-1 border-white -translate-x-48 duration-1000 ${isOpen ? "delay-600 translate-x-0!" : "delay-0"}`} onClick={() => setIsOpen(false)} href="#project">3. PROJECTS</a>
-      <a className={`p-4 border-b-1 border-white -translate-x-48 duration-1000 ${isOpen ? "delay-800 translate-x-0!" : "delay-0"}`} onClick={() => setIsOpen(false)} href="#contact">4. CONTACT</a>
+      <a className="p-4 border-b-1 border-white" onClick={() => setIsOpen(false)} href="#hero">1. INTRO</a>
+      <a className={`p-4 border-b-1 border-white -translate-x-48 duration-1000 ${isOpen ? "delay-400 translate-x-0!" : "delay-0"}`} onClick={() => setIsOpen(false)} href="#project">2. PROJECTS</a>
     </div>
     <div>
       <p className={`text-sm delay-500 duration-500 ${isOpen ? "" : "delay-0! -translate-x-[200%]"}`}>Developed by <span className="italic font-bold">Ridwan Bagoes Setiawan</span> with 💖</p>
