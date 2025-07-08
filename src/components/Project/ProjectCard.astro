@@ -1,0 +1,57 @@
+---
+import type { ProjectInformationDataType } from "./projects_informations";
+import { calculate_duration } from "../../others/util";
+import Observer from "../../others/observer";
+
+interface Props {
+  project_data: ProjectInformationDataType,
+  project_number: number
+}
+
+const { project_data, project_number } = Astro.props as Props;
+
+function rangedate_to_text(start_date: Date, second_date: Date) {
+  const calculation = calculate_duration(start_date, second_date);
+  let result = "";
+  if(calculation.years) {
+    result += `${calculation.years} year${calculation.years > 1 ? "s" : ""}`;
+  }
+  if(calculation.months)  {
+    result += `${result ? ", " : ""}${calculation.months} month${calculation.months > 1 ? "s" : ""}`;
+  }
+  if(calculation.weeks)  {
+    result += `${result ? ", " : ""}${calculation.weeks} week${calculation.weeks > 1 ? "s" : ""}`;
+  }
+  return result;
+}
+
+---
+
+<Observer client:load />
+<div class="w-full h-fit flex flex-col border-1 border-white relative duration-500 observed opacity-0 -left-5 [&.observed-intersected]:opacity-100 [&.observed-intersected]:left-0">
+  <div class="w-full h-18 md:h-28 flex flex-row gap-2 [&_>_div]:p-4 border-b-1 border-white">
+    <div class="flex justify-center items-center h-full aspect-square border-r-1 border-white">
+      <h1 class="text-4xl">{project_number}</h1>
+    </div>
+    <div class="flex flex-col justify-center gap-0 ml-2 py-2">
+      <h1 class="text-4xl">{project_data.title}</h1>
+      <p class="text-sm italic">{(typeof project_data.time.endDate === "string") ? rangedate_to_text(project_data.time.startDate, new Date()) : rangedate_to_text(project_data.time.startDate, project_data.time.endDate)}</p>
+    </div>
+  </div>
+  <div class="relative overflow-auto [&::-webkit-scrollbar]:h-0! [&::-webkit-scrollbar]:w-0!">
+    <div class="flex flex-row gap-1 md:gap-4 px-3 border-b-1 border-r-1 border-white w-max h-8">
+      {project_data.labels.map((label, index) => {
+        return <>
+        {index > 0 && <span class="h-full w-[1px] bg-white"></span>}
+        <div class="relative font-medium text-sm flex justify-center items-center w-max max-w-max h-full border-white">
+          {label}
+        </div>
+        </>
+      })}
+    </div>
+    <p class="p-6 max-h-[30vh]">{project_data.description}</p>
+    <div class="w-full h-fit flex flex-row justify-end">
+      {project_data.link && <button class="p-3 border-t-1 border-l-1 border-white cursor-pointer" onclick={`window.open("${project_data.link}", "_blank")`}>See the project</button>}
+    </div>
+  </div>
+</div>
