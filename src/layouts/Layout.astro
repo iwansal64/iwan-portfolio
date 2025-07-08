@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 import Analytics from '@vercel/analytics/astro'
+
+import background from '../assets/background.svg';
+
 ---
 
 <!doctype html>
@@ -21,6 +24,7 @@ import Analytics from '@vercel/analytics/astro'
 		<Analytics />
 	</head>
 	<body>
+		<img id="background" src={background.src} alt="" fetchpriority="high" />
 		<slot />
 	</body>
 </html>
