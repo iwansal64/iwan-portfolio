@@ -1,11 +1,13 @@
 ---
 import HoverCounter from "./HoverCounter";
+import NavbarActiveTrigger from "./NavbarActiveTrigger";
 import Sidebar from "./Sidebar";
 
 ---
 
 
-<nav class="hidden w-[90vw] p-4 lg:flex flex-row justify-around fixed left-1/2 -translate-x-1/2 z-100">
+<nav class="hidden w-[90vw] p-4 lg:flex flex-row justify-around fixed left-1/2 -translate-x-1/2 z-100 duration-1500 has-[.navbar-not-active]:opacity-0 has-[.navbar-not-active]:-translate-y-full">
+  <NavbarActiveTrigger client:load />
   <a class="hover-counter" href="#hero">INTRO</a>
   <div class="select-none flex justify-center items-center text-[#6b2e94]">I W A N</div>
   <a class="hover-counter" href="#project">PROJECT</a>

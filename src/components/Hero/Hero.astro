@@ -1,10 +1,12 @@
 ---
 import AutomaticSystemDesign from "./AutomaticSystemDesign";
+import HeroActiveTrigger from "./HeroActiveTrigger";
 
 
 ---
 
-<section id="hero" class="w-dvw min-h-dvh h-max relative">
+<section id="hero" class="absolute w-dvw min-h-dvh h-max duration-1500 has-[.hero-not-active]:opacity-0">
+   <HeroActiveTrigger client:load />
    <div class="absolute top-68 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-40 flex flex-col gap-2 overflow-hidden">
       <!-- My Name -->
       <h1 class="font-thin italic text-6xl lg:text-8xl flex flex-col -space-y-2 w-fit">

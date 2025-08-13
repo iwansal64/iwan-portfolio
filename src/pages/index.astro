@@ -2,8 +2,9 @@
 import Hero from '../components/Hero/Hero.astro';
 import Layout from '../layouts/Layout.astro';
 import Navbar from "../components/Navbar/Navbar.astro";
-import Project from "../components/Project/Project.astro";
+import Project from "../components/Project/ProjectOverview/Project.astro";
 import Footer from "../components/Footer/Footer.astro";
+import ProjectViewer from "../components/Project/ProjectViewer/ProjectViewer.astro";
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,7 +13,10 @@ import Footer from "../components/Footer/Footer.astro";
 
 <Layout>
 	<Navbar />
-	<Hero />
+	<div class="w-dvw h-dvh relative">
+		<Hero />
+		<ProjectViewer />
+	</div>
 	<Project />
 	<Footer />
 </Layout>

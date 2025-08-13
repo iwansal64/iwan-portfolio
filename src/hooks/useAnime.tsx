@@ -1,5 +1,3 @@
-import type { Scope } from "animejs";
-import type { RefObject } from "react";
 import { create } from "zustand";
 
 type useAnimeHookType = {
